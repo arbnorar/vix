@@ -1,15 +1,19 @@
-import Vue from "vue"
-import VueRouter from "vue-router"
-import Home from "../views/Home.vue"
-import LandingPage from "../views/LandingPage.vue"
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import LandingPage from "../views/LandingPage.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/home",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/animals",
+    name: "Animals",
   },
   {
     path: "/about",
@@ -25,12 +29,12 @@ const routes = [
     name: "LandingPage",
     component: LandingPage,
   },
-]
+];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
-})
+});
 
-export default router
+export default router;
