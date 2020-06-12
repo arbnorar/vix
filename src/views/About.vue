@@ -1,42 +1,52 @@
 <template>
-	<div>
-		<Navbar />
-		<img class="w-100" src="../assets/images/fantastic-four.jpg" alt="" />
-		<div class="container">
-			<h1 class="font-weight-bold">Test qetu tu lu</h1>
-			<h4 class="text-center">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo aliquid
-				commodi porro soluta iste eos sed quas ducimus, inventore qui quasi illo
-				dolorum repellat nulla cupiditate reprehenderit placeat dolorem
-				asperiores error. Nemo sed, iusto exercitationem est impedit facilis
-				tenetur, sapiente, aspernatur ullam rem qui unde? Officiis optio
-				voluptate a vel quisquam quo unde consequatur doloremque ipsa, soluta,
-				voluptates fugiat. Mollitia doloremque accusamus cumque dolorum, eius
-				quia sunt quos repellat veritatis nobis rem beatae voluptate repellendus
-				eum obcaecati minima veniam accusantium ab voluptatum error consectetur
-				placeat ea. Quam qui corrupti obcaecati maxime ipsam reiciendis adipisci
-				harum odit et omnis. Culpa debitis maxime facere vero ducimus quos
-				expedita tempora quisquam quam aut. Iste quia doloribus ex, omnis ullam
-				deserunt placeat quam adipisci voluptates. Nostrum itaque aspernatur
-				deserunt temporibus deleniti similique. Dignissimos, neque. Excepturi
-				repudiandae, enim perferendis harum incidunt saepe illum nemo tempora
-				non similique porro voluptatum sit ratione adipisci facilis. Repudiandae
-				pariatur laborum.
-			</h4>
-		</div>
-	</div>
+  <div>
+    <Navbar />
+    <img class="w-100" src="../assets/images/fantastic-four.jpg" alt />
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Our Vision</h1>
+        <div class="heading-underline"></div>
+        <p class="lead">
+          Making the planet a better place by making a home for our wildlife and
+          endangered species is our top mission here at Vix Wildlife Center.
+          From endangered species to rescue animals, our furry, four-legged
+          family members are slowly but surely settled in a safe space all the
+          while having their natural ways of living practically intact.
+          <br />Naturally, our staff, volunteers and supporters are
+          fundamentally important to our organization, and we are extremely
+          thankful to each and every individual that has helped and/or proceeds
+          to help keep wildlife safe and sound.
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-	import Navbar from "../components/layout/Navbar";
+import Navbar from "../components/layout/Navbar";
 
-	export default {
-		name: "About",
-		components: {
-			Navbar
-		}
-	};
+export default {
+  name: "About",
+  components: {
+    Navbar,
+  },
+};
 </script>
 
-<style>
+<style scoped>
+.jumbotron {
+  background-color: white;
+}
+
+.lead {
+  font-weight: 400;
+}
+
+.heading-underline {
+  width: 16rem;
+  height: 0.2rem;
+  background-color: #1d3a1c;
+  margin: 0 auto 2rem;
+}
 </style>
