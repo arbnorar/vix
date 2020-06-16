@@ -1,5 +1,5 @@
 <template>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide my-4" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="@/assets/images/wolf.jpg" class="d-block w-100" />
@@ -45,7 +45,4 @@ export default {
 </script>
 
 <style scoped>
-.carousel {
-  width: 90%;
-}
 </style>
