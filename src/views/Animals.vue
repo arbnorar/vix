@@ -6,7 +6,7 @@
         <div class="col col-4 my-3" v-for="a in animals" v-bind:key="a.name">
           <div class="card">
             <img v-bind:src="getImg(a.img)" class="card-img-top" />
-            <div class="card-body">
+            <div class="card-body" >
               <h2>{{a.name}}</h2>
               <h5>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aperiam placeat id,
@@ -106,10 +106,16 @@ export default {
     setAnimal(a) {
       this.currentAnimal = a;
       this.modalKey++;
-    }
+    },
   }
 };
 </script>
 
 <style scoped>
+  .card {
+    transition: transform 0.2s ease;
+  }
+  .card:hover {
+    transform: scale(1.1);
+  }
 </style>
