@@ -116,6 +116,6 @@ export default {
     transition: transform 0.2s ease;
   }
   .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.02, 1.05);
   }
 </style>
