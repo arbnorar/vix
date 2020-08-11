@@ -21,18 +21,21 @@
       </div>
     </div>
     <Socialmedia />
+    <Volunteer />
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import Carousel from "../components/Carousel";
-import Socialmedia from "../components/layout/Socialmedia";
+import Carousel from '../components/Carousel';
+import Socialmedia from '../components/layout/Socialmedia';
+import Volunteer from './Volunteer';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Carousel,
     Socialmedia,
+    Volunteer,
   },
   data() {
     return {};

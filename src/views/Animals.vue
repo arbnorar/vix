@@ -38,6 +38,8 @@
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
         :key="modalKey"
+        data-backdrop="static"
+        data-keyboard="false"
       >
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
@@ -54,6 +56,7 @@
                 class="close"
                 data-dismiss="modal"
                 aria-label="Close"
+                @click="stopVideo"
               >
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -64,9 +67,7 @@
                 id="videoElement"
                 controls
                 width="100%"
-              >
-                <source :src="getVid(currentAnimal.vid)" type="video/mp4" />
-              </video>
+              ></video>
             </div>
           </div>
         </div>
@@ -76,53 +77,62 @@
 </template>
 
 <script>
+import fire from '../firebase';
+
 export default {
   data() {
     return {
       currentAnimal: null,
-      animals: [
-        {
-          name: "Yuki",
-          img: "yuki.jpg",
-          vid: "yukivideo.mp4",
-        },
-        {
-          name: "Khan",
-          img: "khan.jpg",
-          vid: "khanvideo.mp4",
-        },
-        {
-          name: "Bambi",
-          img: "bambi.jpg",
-          vid: "bambivideo.mp4",
-        },
-        {
-          name: "Tara",
-          img: "tara.jpg",
-          vid: "taravideo.mp4",
-        },
-      ],
+      animals: [],
       modalKey: 1,
     };
   },
-  name: "Animals",
+  name: 'Animals',
+  async created() {
+    const db = fire.firestore();
+    const that = this;
 
+    db.collection('animals')
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          that.animals.push(doc.data());
+        });
+      });
+  },
   methods: {
     getImg(img) {
-      return require("../assets/images/" + img);
+      return require('../assets/images/' + img);
     },
-    getVid(vid) {
-      return require("../assets/videos/" + vid);
+    async getVid(vidName) {
+      const storage = fire.storage();
+      const pathRef = storage.ref(vidName);
+
+      const src = await pathRef.getDownloadURL();
+
+      var video = document.getElementById('videoElement');
+      var source = document.createElement('source');
+      source.setAttribute('src', src);
+      video.appendChild(source);
     },
     setAnimal(a) {
       this.currentAnimal = a;
       this.modalKey++;
+      this.getVid(a.vid);
+    },
+    stopVideo() {
+      var video = document.getElementById('videoElement');
+      video.pause();
     },
   },
 };
 </script>
 
 <style scoped>
+#videoModal {
+  overflow-y: scroll;
+}
+
 .card {
   transition: transform 0.2s ease;
 }

@@ -14,7 +14,7 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <i class="fas fa-bars" id="navbar-toggler-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto mr-5 w-75">
@@ -41,7 +41,13 @@
           <router-link to="/connect" class="nav-link h4">Connect</router-link>
         </li>
         <li class="nav-item">
-          <div class="custom-control custom-switch nav-link">
+          <a id="themeSwitcher" @click="change" :value="dark">
+            <i :class="dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
+          </a>
+          <!-- <div
+            class="custom-control custom-switch h4"
+            style="display: block; padding: 0.5rem 2rem"
+          >
             <input
               type="checkbox"
               class="custom-control-input"
@@ -51,7 +57,7 @@
             <label class="custom-control-label" for="customSwitch1"
               ><i :class="dark ? 'fas fa-sun' : 'fas fa-moon'"></i
             ></label>
-          </div>
+          </div> -->
         </li>
       </ul>
     </div>
@@ -79,10 +85,8 @@ export default {
   },
   methods: {
     ...mapActions(['changeTheme']),
-  },
-  watch: {
-    dark: function() {
-      this.changeTheme(this.dark);
+    change() {
+      this.changeTheme(!this.dark);
       this.$router.go();
     },
   },
@@ -96,5 +100,11 @@ export default {
 .navbar-nav {
   display: flex;
   justify-content: space-between;
+}
+#themeSwitcher {
+  display: block;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  font-size: 20px;
 }
 </style>

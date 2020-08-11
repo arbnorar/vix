@@ -12392,3 +12392,7 @@ body {
 .single-content .text-content h4 {
   font-weight: 700;
 }
+
+#navbar-toggler-bars {
+  color: black;
+}
