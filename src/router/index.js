@@ -8,8 +8,7 @@ import Education from "../views/Education.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
+const routes = [{
     path: "/home",
     name: "Home",
     component: Home,
@@ -38,7 +37,6 @@ const routes = [
 
 const router = new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
   routes,
 });
 

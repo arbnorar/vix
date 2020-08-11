@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Navbar />
     <div class="container-fluid">
       <div class="row">
         <div class="col col-4 my-3" v-for="a in animals" v-bind:key="a.name">
           <div class="card">
             <img v-bind:src="getImg(a.img)" class="card-img-top" />
-            <div class="card-body" >
-              <h2>{{a.name}}</h2>
+            <div class="card-body">
+              <h2>{{ a.name }}</h2>
               <h5>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aperiam placeat id,
-                non error excepturi reprehenderit? Soluta asperiores voluptate beatae totam animi,
-                laborum mollitia sequi natus, aut eligendi quos dignissimos.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam aperiam placeat id, non error excepturi reprehenderit?
+                Soluta asperiores voluptate beatae totam animi, laborum mollitia
+                sequi natus, aut eligendi quos dignissimos.
               </h5>
 
               <!-- Modal trigger -->
@@ -21,7 +21,9 @@
                 data-target="#videoModal"
                 class="btn btn-success mt-5"
                 @click="setAnimal(a)"
-              >Meet {{a.name}}</button>
+              >
+                Meet {{ a.name }}
+              </button>
             </div>
           </div>
         </div>
@@ -44,13 +46,25 @@
                 class="modal-title"
                 id="exampleModalLabel"
                 v-if="currentAnimal"
-              >Meet {{currentAnimal.name}}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              >
+                Meet {{ currentAnimal.name }}
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <video v-if="currentAnimal" id="videoElement" controls width="100%">
+              <video
+                v-if="currentAnimal"
+                id="videoElement"
+                controls
+                width="100%"
+              >
                 <source :src="getVid(currentAnimal.vid)" type="video/mp4" />
               </video>
             </div>
@@ -62,9 +76,6 @@
 </template>
 
 <script>
-import Navbar from "../components/layout/Navbar";
-// import $ from "jquery";
-
 export default {
   data() {
     return {
@@ -73,29 +84,29 @@ export default {
         {
           name: "Yuki",
           img: "yuki.jpg",
-          vid: "yukivideo.mp4"
+          vid: "yukivideo.mp4",
         },
         {
           name: "Khan",
           img: "khan.jpg",
-          vid: "khan.mp4"
+          vid: "khanvideo.mp4",
         },
         {
           name: "Bambi",
-          img: "bambi.jpg"
+          img: "bambi.jpg",
+          vid: "bambivideo.mp4",
         },
         {
-          name: "locka jeme",
-          img: "tara.jpg"
-        }
+          name: "Tara",
+          img: "tara.jpg",
+          vid: "taravideo.mp4",
+        },
       ],
-      modalKey: 1
+      modalKey: 1,
     };
   },
   name: "Animals",
-  components: {
-    Navbar
-  },
+
   methods: {
     getImg(img) {
       return require("../assets/images/" + img);
@@ -107,15 +118,15 @@ export default {
       this.currentAnimal = a;
       this.modalKey++;
     },
-  }
+  },
 };
 </script>
 
 <style scoped>
-  .card {
-    transition: transform 0.2s ease;
-  }
-  .card:hover {
-    transform: scale(1.02, 1.05);
-  }
+.card {
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.02, 1.05);
+}
 </style>

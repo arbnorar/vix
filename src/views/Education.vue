@@ -1,7 +1,8 @@
 <template>
   <div>
-    <Navbar />
-    <div class="container-fluid d-flex flex-column  justify-content-center my-2">
+    <div
+      class="container-fluid d-flex flex-column  justify-content-center my-2"
+    >
       <div class="row">
         <img
           class="b-image"
@@ -58,7 +59,9 @@
         </h5>
         <ul class="text-left">
           <li>
-            <span class="font-weight-bold text-danger">Do not attempt to handle or transport</span>
+            <span class="font-weight-bold text-danger"
+              >Do not attempt to handle or transport</span
+            >
             an injured deer, seal, wild boar, otter, badger, fox, snake, bird of
             prey (including owls), swan, goose, heron or gull, keep a safe
             distance.
@@ -100,12 +103,9 @@
 </template>
 
 <script>
-import Navbar from "../components/layout/Navbar";
 export default {
   name: "Education",
-  components: {
-    Navbar,
-  },
+  components: {},
 };
 </script>
 

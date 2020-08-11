@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <img class="w-100" src="../assets/images/fantastic-four.jpg" alt />
 
     <div class="jumbotron jumbotron-fluid">
@@ -92,18 +91,17 @@
 </template>
 
 <script>
-import Navbar from "../components/layout/Navbar";
-
 export default {
   name: "About",
-  components: {
-    Navbar
-  }
+  components: {},
 };
 </script>
 
 <style scoped>
-.jumbotron {
+body {
+  font-family: "Lily Script One";
+}
+/* .jumbotron {
   background-color: white;
 }
 
@@ -181,5 +179,5 @@ body {
 }
 .single-content .text-content h4 {
   font-weight: 700;
-}
+} */
 </style>

@@ -1,11 +1,15 @@
 <template>
-  <div id="carouselExampleControls" class="carousel slide my-4" data-ride="carousel">
+  <div id="carouselIndicators" class="carousel slide my-4" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      <li
+        data-target="#carouselIndicators"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselIndicators" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -26,7 +30,7 @@
     </div>
     <a
       class="carousel-control-prev"
-      href="#carouselExampleControls"
+      href="#carouselIndicators"
       role="button"
       data-slide="prev"
     >
@@ -35,7 +39,7 @@
     </a>
     <a
       class="carousel-control-next"
-      href="#carouselExampleControls"
+      href="#carouselIndicators"
       role="button"
       data-slide="next"
     >
@@ -47,9 +51,20 @@
 
 <script>
 export default {
-  name: "Carousel"
+  name: "Carousel",
 };
 </script>
 
 <style scoped>
+.carousel .carousel-indicators li {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  border: 1px solid gray;
+}
+
+.carousel .carousel-indicators li.active {
+  background-color: black;
+  border: 1px solid gray;
+}
 </style>

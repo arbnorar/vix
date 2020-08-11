@@ -27,13 +27,28 @@
           <router-link to="/animals" class="nav-link h4">Animals</router-link>
         </li>
         <li class="nav-item four">
-          <router-link to="/education" class="nav-link h4">Education</router-link>
+          <router-link to="/education" class="nav-link h4"
+            >Education</router-link
+          >
         </li>
         <li class="nav-item five">
-          <router-link to="/volunteer" class="nav-link h4">Volunteer</router-link>
+          <router-link to="/volunteer" class="nav-link h4"
+            >Volunteer</router-link
+          >
         </li>
         <li class="nav-item six">
           <router-link to="/connect" class="nav-link h4">Connect</router-link>
+        </li>
+        <li class="nav-item">
+          <div class="custom-control custom-switch nav-link">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customSwitch1"
+              v-model="dark"
+            />
+            <label class="custom-control-label" for="customSwitch1">Test</label>
+          </div>
         </li>
       </ul>
     </div>
@@ -41,39 +56,37 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "Navbar",
   data() {
     return {};
-  }
+  },
+  computed: {
+    ...mapGetters(["darkTheme"]),
+    dark: function() {
+      return this.darkTheme;
+    },
+  },
+  methods: {
+    ...mapActions(["changeTheme"]),
+  },
+  watch: {
+    dark: function() {
+      this.changeTheme(this.darkTheme);
+      this.$router.go();
+    },
+  },
 };
 </script>
 
 <style scoped>
 .navbar-brand {
   font-size: 26px;
-  color: #1d3a1c;
 }
 .navbar-nav {
   display: flex;
   justify-content: space-between;
-}
-
-.nav-link {
-  color: black !important;
-}
-
-.nav-link::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: width 0.3s;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-  transition: width 0.5s;
 }
 </style>
