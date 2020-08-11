@@ -2,7 +2,8 @@
   <nav class="navbar navbar-light navbar-expand-lg">
     <router-link to="/home" class="navbar-brand">
       <img src="@/assets/images/mainlogo.png" height="70px" />
-      <br />Wildlife Center
+      <br />
+      <span>Wildlife Center</span>
     </router-link>
     <button
       class="navbar-toggler"
@@ -47,7 +48,9 @@
               id="customSwitch1"
               v-model="dark"
             />
-            <label class="custom-control-label" for="customSwitch1">Test</label>
+            <label class="custom-control-label" for="customSwitch1"
+              ><i :class="dark ? 'fas fa-sun' : 'fas fa-moon'"></i
+            ></label>
           </div>
         </li>
       </ul>
@@ -56,25 +59,30 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(["darkTheme"]),
-    dark: function() {
-      return this.darkTheme;
+    ...mapGetters(['darkTheme']),
+    dark: {
+      get() {
+        return this.darkTheme;
+      },
+      set(value) {
+        return this.$store.commit('CHANGE_THEME', value);
+      },
     },
   },
   methods: {
-    ...mapActions(["changeTheme"]),
+    ...mapActions(['changeTheme']),
   },
   watch: {
     dark: function() {
-      this.changeTheme(this.darkTheme);
+      this.changeTheme(this.dark);
       this.$router.go();
     },
   },

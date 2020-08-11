@@ -5061,7 +5061,11 @@ input[type="button"].btn-block {
   margin-right: 1rem;
   font-size: 1.171875rem;
   line-height: inherit;
-  white-space: nowrap
+  white-space: nowrap;
+}
+
+.navbar-brand span{
+  color:white
 }
 
 .navbar-brand:hover,
