@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar v-if="this.$route.name !== 'LandingPage'" />
+    <Footer v-if="this.$route.name !== 'LandingPage'" />
     <router-view />
   </div>
 </template>
@@ -8,6 +9,7 @@
 <script>
 import Navbar from "./components/layout/Navbar";
 import store from "./store";
+import Footer from "./components/layout/Footer";
 
 if (store.getters.darkTheme) {
   require("./assets/css/bootstrapDark.min.css");
@@ -19,6 +21,7 @@ export default {
   name: "app",
   components: {
     Navbar,
+    Footer,
   },
 };
 </script>

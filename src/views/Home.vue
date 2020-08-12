@@ -1,11 +1,7 @@
 <template>
   <div>
-    <div
-      class="container-fluid d-flex flex-column align-items-center justify-content-center my-4"
-    >
-      <h2 class="font-weight-bold">
-        A safe haven for every animal in need of one
-      </h2>
+    <div class="container-fluid d-flex flex-column align-items-center justify-content-center my-4">
+      <h2 class="font-weight-bold">A safe haven for every animal in need of one</h2>
       <Carousel />
       <div>
         <h2 class="font-weight-bold">What is it that we do exactly?</h2>
@@ -20,25 +16,20 @@
         </h5>
       </div>
     </div>
-    <Socialmedia />
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import Carousel from '../components/Carousel';
-import Socialmedia from '../components/layout/Socialmedia';
+import Carousel from "../components/Carousel";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Carousel,
-    Socialmedia,
   },
   data() {
     return {};
   },
-  methods: {
-
-  },
+  methods: {},
 };
 </script>
 

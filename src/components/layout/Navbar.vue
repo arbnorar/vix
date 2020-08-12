@@ -28,36 +28,15 @@
           <router-link to="/animals" class="nav-link h4">Animals</router-link>
         </li>
         <li class="nav-item four">
-          <router-link to="/education" class="nav-link h4"
-            >Education</router-link
-          >
+          <router-link to="/education" class="nav-link h4">Education</router-link>
         </li>
         <li class="nav-item five">
-          <router-link to="/volunteer" class="nav-link h4"
-            >Volunteer</router-link
-          >
-        </li>
-        <li class="nav-item six">
-          <router-link to="/connect" class="nav-link h4">Connect</router-link>
+          <router-link to="/volunteer" class="nav-link h4">Volunteer</router-link>
         </li>
         <li class="nav-item">
           <a id="themeSwitcher" @click="change" :value="dark">
             <i :class="dark ? 'fas fa-sun' : 'fas fa-moon'"></i>
           </a>
-          <!-- <div
-            class="custom-control custom-switch h4"
-            style="display: block; padding: 0.5rem 2rem"
-          >
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="customSwitch1"
-              v-model="dark"
-            />
-            <label class="custom-control-label" for="customSwitch1"
-              ><i :class="dark ? 'fas fa-sun' : 'fas fa-moon'"></i
-            ></label>
-          </div> -->
         </li>
       </ul>
     </div>
@@ -65,26 +44,26 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: 'Navbar',
+  name: "Navbar",
   data() {
     return {};
   },
   computed: {
-    ...mapGetters(['darkTheme']),
+    ...mapGetters(["darkTheme"]),
     dark: {
       get() {
         return this.darkTheme;
       },
       set(value) {
-        return this.$store.commit('CHANGE_THEME', value);
+        return this.$store.commit("CHANGE_THEME", value);
       },
     },
   },
   methods: {
-    ...mapActions(['changeTheme']),
+    ...mapActions(["changeTheme"]),
     change() {
       this.changeTheme(!this.dark);
       this.$router.go();
