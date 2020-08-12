@@ -5109,6 +5109,7 @@ input[type='button'].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 1rem;
+  background-color: white;
 }
 
 .navbar .container,
@@ -6216,7 +6217,6 @@ a.badge-dark.focus {
 
 .jumbotron {
   padding: 2rem 1rem;
-  margin-bottom: 2rem;
   background-color: #ecf0f1;
   border-radius: 0.3rem;
 }
@@ -12336,6 +12336,7 @@ a.text-dark:focus {
 
 body {
   background: #eee;
+  color: black;
   font-family: 'Lily Script One';
 }
 
@@ -12396,3 +12397,10 @@ body {
 #navbar-toggler-bars {
   color: black;
 }
+
+#footer{
+  background-color: #D6D6D6;
+  color: #333;
+  min-height: 100px;
+}
+

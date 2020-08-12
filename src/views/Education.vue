@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="container-fluid d-flex flex-column  justify-content-center my-2"
+      class="container-fluid d-flex flex-column  justify-content-center"
     >
       <div class="row">
         <img
@@ -26,7 +26,6 @@
       <div class="container">
         <img
           src="../assets/images/holding-hedgehog.jpg"
-          alt="kangaroo"
           class="float-left"
         />
         <h4 class="my-5 mx-2 font-weight-bold">
@@ -124,10 +123,16 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: bold;
   letter-spacing: 8px;
   animation: 4s left 0s;
+}
+
+@media only screen and (min-width: 768px) {
+  .title{
+    font-size: 5rem;
+  }
 }
 
 .container img {

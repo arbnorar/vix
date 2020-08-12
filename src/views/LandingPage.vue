@@ -15,6 +15,7 @@
       </video>
     </div>
     <div class="content">
+      <router-link class="w-100" to="/home">
       <svg
         version="1.1"
         id="Layer_1"
@@ -37,7 +38,8 @@
           />
         </g>
       </svg>
-      <router-link to="/home" class="butoni">LEARN MORE ABOUT US</router-link>
+      </router-link>
+      <!-- <router-link to="/home" class="butoni">LEARN MORE ABOUT US</router-link> -->
     </div>
   </div>
 </template>
@@ -81,6 +83,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 
 .video-container video {
@@ -102,14 +105,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 svg {
   width: 100%;
 }
 
-.butoni {
+/* .butoni {
   position: absolute;
   top: 70%;
   left: 42%;
@@ -139,7 +142,7 @@ svg {
 
 .butoni:hover:before {
   left: 100%;
-}
+} */
 
 path {
   stroke: #ffffff;
@@ -170,6 +173,12 @@ path {
     opacity: 5;
     fill: rgba(255, 255, 255, 1);
     stroke-dashoffset: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .content{
+    width:25%;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="jumbotron">
+    <div class="jumbotron m-0">
       <h1 class="display-4">Thank you for making a change!</h1>
       <p class="lead">
         The act of volunteering for our endagered center is highly welcomed and
@@ -34,6 +34,7 @@
             style="color: grey;"
           >Your available days for volunteering</label>
           <br />
+          <div id="days" class="form-group">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
             <label class="form-check-label" for="inlineCheckbox1">Monday</label>
@@ -62,12 +63,13 @@
             <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
             <label class="form-check-label" for="inlineCheckbox1">Sunday</label>
           </div>
-
+          </div>
           <br />
-
-          <label for="exampleFormControlInput1" style="color: grey;">Message</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <button type="submit" class="btn" style="margin-top: 15px; width: 120px;">SEND NOW</button>
+          <div class="form-group">
+            <label for="exampleFormControlInput1" style="color: grey;">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success" style="margin-top: 15px; width: 120px;">SEND NOW</button>
         </form>
       </div>
 
@@ -124,6 +126,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 30px 0;
 }
 
 .rows {
@@ -141,11 +144,38 @@ export default {
   justify-content: center;
 }
 
+.form-control{
+  width: 300px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center
+}
 @media only screen and (min-width: 992px) {
   .contact-info {
     margin-top: 0;
   }
 
+.form-group{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:stretch
+}
+
+.form-control{
+  width:90%;
+}
+
+#days{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
   .rows {
     justify-content: flex-start;
     align-items: center;
@@ -158,5 +188,6 @@ export default {
   .text {
     margin: 40px 250px;
   }
+
 }
 </style>

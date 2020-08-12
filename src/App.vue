@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Navbar v-if="this.$route.name !== 'LandingPage'" />
-    <Footer v-if="this.$route.name !== 'LandingPage'" />
     <router-view />
+    <Footer v-if="this.$route.name !== 'LandingPage'" />
   </div>
 </template>
 

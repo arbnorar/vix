@@ -5,6 +5,7 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">Our Vision</h1>
+        <br>
         <div class="heading-underline"></div>
         <p class="lead">
           Making the planet a better place by making a home for our wildlife and
@@ -25,7 +26,7 @@
 
     <div class="container my-4">
       <div class="row">
-        <div class="col-md-4 col-sm-12 my-4">
+        <div class="col-12 col-md-6 col-lg-4 my-4">
           <div class="single-content">
             <img src="../assets/images/rachel.jpg" alt="Rachel McAdams" />
             <div class="text-content">
@@ -34,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12 my-4">
+        <div class="col-12 col-md-6 col-lg-4 my-4">
           <div class="single-content">
             <img src="../assets/images/joaquin.jpg" alt="Joaquin Phoenix" />
             <div class="text-content">
@@ -44,7 +45,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 my-4">
+        <div class="col-12 col-md-6 col-lg-4 my-4">
           <div class="single-content">
             <img src="../assets/images/ricky.jpg" alt="Ricky Gervais" />
             <div class="text-content">
@@ -53,10 +54,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-4 col-sm-12 my-4">
+        <div class="col-12 col-md-6 col-lg-4 my-4">
           <div class="single-content">
             <img src="../assets/images/frank.jpg" alt="Frank O'Hara" />
             <div class="text-content">
@@ -66,7 +65,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 my-4">
+        <div class="col-12 col-md-6 col-lg-4 my-4">
           <div class="single-content">
             <img src="../assets/images/david.jpg" alt="David Bowie" />
             <div class="text-content">
@@ -76,7 +75,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm-12 my-4">
+        <div class="col-12 col-md-6 col-lg-4 my-4">
           <div class="single-content">
             <img src="../assets/images/flavio.jpg" alt="Software Developer" />
             <div class="text-content">
@@ -100,10 +99,7 @@ export default {
 <style scoped>
 body {
   font-family: "Lily Script One";
-}
-/* .jumbotron {
-  background-color: white;
-}
+} 
 
 .lead {
   font-weight: 400;
@@ -123,15 +119,10 @@ body {
   margin: 0 auto 2rem;
 }
 
-body {
-  background: #eee;
-  font-family: "Lily Script One";
-}
-
 .single-content {
   position: relative;
   transition: 0.3s;
-  box-shadow: 10px 20px 20px gray;
+  box-shadow: 5px 13px 13px #3d3d3d;
 }
 
 .single-content .text-content,
@@ -153,6 +144,11 @@ body {
 }
 
 .single-content:hover:after {
+  opacity: 0.9;
+  transform: rotate3d(0, 0, 0, 0deg);
+}
+
+.single-content:active:after {
   opacity: 0.9;
   transform: rotate3d(0, 0, 0, 0deg);
 }
@@ -179,5 +175,5 @@ body {
 }
 .single-content .text-content h4 {
   font-weight: 700;
-} */
+} 
 </style>
