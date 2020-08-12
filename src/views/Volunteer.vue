@@ -154,16 +154,14 @@
         </div>
       </div>
     </div>
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-fluid">
       <h3 class="display-4">Why volunteering matters..</h3>
       <p class="lead">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
+       Volunteering to help animals means more than just cleaning up messes. Handy people are needed to build storage structures and play equipment for the animals.
       </p>
       <hr class="my-4" />
       <p>
-        It uses utility classes for typography and spacing to space content out
-        within the larger container.
+        Sadly, 2.7 million animals are put down every year in shelters that take in animals more quickly than they can adopt them out. Staff shortage is one major reason why these shelters aren’t no-kill. As a volunteer, your work could save animals’ lives and help them find loving forever homes. 
       </p>
     </div>
   </div>
@@ -190,6 +188,10 @@ export default {
 .contact-info {
   margin-top: 50px;
   align-self: center;
+}
+
+.jumbotron {
+  text-align: center;
 }
 
 @media only screen and (min-width: 992px) {

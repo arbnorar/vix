@@ -21,34 +21,23 @@
       </div>
     </div>
     <Socialmedia />
-    <Volunteer />
   </div>
 </template>
 <script>
 // @ is an alias to /src
 import Carousel from '../components/Carousel';
 import Socialmedia from '../components/layout/Socialmedia';
-import Volunteer from './Volunteer';
-
 export default {
   name: 'Home',
   components: {
     Carousel,
     Socialmedia,
-    Volunteer,
   },
   data() {
     return {};
   },
   methods: {
-    next() {
-      const first = this.slides.shift();
-      this.slides = this.slides.concat(first);
-    },
-    previous() {
-      const last = this.slides.pop();
-      this.slides = [last].concat(this.slides);
-    },
+
   },
 };
 </script>

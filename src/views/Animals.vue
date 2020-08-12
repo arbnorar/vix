@@ -2,7 +2,7 @@
   <div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col col-4 my-3" v-for="a in animals" v-bind:key="a.name">
+        <div class="col-12 col-md-6 col-lg-4 my-3" v-for="a in animals" v-bind:key="a.name">
           <div class="card">
             <img v-bind:src="getImg(a.img)" class="card-img-top" />
             <div class="card-body">
